@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primer aplicación web python</title>
+    <title>Primer aplicación web-Python</title>
 </head>
 <body>
     Hola Mundo desde python
-    <input type="range" name="txtNombre" id="txt.Nombre">
+    
+    <input type="text" name="txtNombre" id="txtNombre">
     <script>
 document.addEventListener('DOMContentLoaded', (e) => {
-    console.log('DOM cargado');
+    txtNombre.addEventListener("keyup", (e) => {
+fetch('http://localhost:3000',  { 
+    "method" : "POST",
+    body: txtNombre.value
+  }).then()(resp => resp.Text())
+  .then(data => { console.log(data);
+
+   });
+   
+    });   
 });
     </script>
 
